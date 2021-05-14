@@ -23,13 +23,13 @@
             //jsondate 1개씩 뽑아서 화면에 table>er>td에 출력하게 합니다.
             //append는 가상선택자의 arter와 같음. 기준영역의 다음을 말합니다.
             for(var i=0;i<jsonData.length;i++) {
-                $('#board tbody').append('<tr>');
-                $('#board tbody').append('<td style="text-align:center;">'+(i+1)+'</td>');
-                $('#board tbody').append('<td>'+ jsonData[i]['_id']+'</td>');
-                $('#board tbody').append('<td>'+ jsonData[i]['age']+'</td>');
-                $('#board tbody').append('<td>'+ jsonData[i]['eyeColor']+'</td>');
-                $('#board tbody').append('<td>'+ jsonData[i]['name']+'</td>');
-                $('#board tbody').append('</tr>');            
+                $('#board tbody').html('<tr>');
+                $('#board tbody').html('<td style="text-align:center;">'+(i+1)+'</td>');
+                $('#board tbody').html('<td>'+ jsonData[i]['_id']+'</td>');
+                $('#board tbody').thml('<td>'+ jsonData[i]['age']+'</td>');
+                $('#board tbody').html('<td>'+ jsonData[i]['eyeColor']+'</td>');
+                $('#board tbody').html('<td>'+ jsonData[i]['name']+'</td>');
+                $('#board tbody').html('</tr>');            
             }
         });
     </script>
