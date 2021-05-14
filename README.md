@@ -2,11 +2,14 @@
 - 외부date.js파일에서 json데이터를 저장한 후 html에서 불러와서 파싱.
 - 외부 사이트에서 제공하는 json데이터를 html에서 불어와 파싱
 - ReatAPT서버주소 (빅데이터) : https://coroname.me/gitdata
+
 #### 20210514(금)작업예정
+-css3,html: 검사기준입니다.
 -사용차단 모바일 메인페이지 footer 영역 css입히기.
 -과제물 제출 준비
+-jQuery json 데이처 파싱 실습
 -메인페이지에 자바스크립트(jQuery)적용, 메뉴, 슬라이드이미지처리, top상단이동
-
+-
 #### 20210512(목요일
 - 픽사베이 이미지 3개: 로고1,슬라이드 이미지1,noimage 1 받고,경로 적어두기
 - 로고:https://pixabay.com/ko/vectors/%EC%BB%A4%ED%94%BC-%EC%BB%A4%ED%94%BC-%ED%95%9C%EC%9E%94-%EC%95%84%EC%B9%A8-%EC%8B%9D%EC%82%AC-5009730/
