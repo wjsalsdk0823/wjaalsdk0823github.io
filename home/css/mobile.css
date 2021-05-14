@@ -415,7 +415,7 @@ footer{
 	bottom: 100px;
 	text-align: center;
 	background: none;
-	z-index: 100px;/*슬라이드 이미지 200보다는 아래이기때문에 겹치면 않보임*/
+	z-index: 100;/*슬라이드 이미지 200보다는 아래이기때문에 겹치면 않보임*/
 }
 .to_top a {
 	display: block;
