@@ -11,27 +11,105 @@
       th{width:25%}
     </style>
     <!--제이쿼리 콩 임포트 불러오기-->
-
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
-    
-    <script src="./json.js"></script>
+     <script src="./json.js"></script>
     <script>
-    /*외부 js 파일의 json 데이터를 body태그안의 #*/
+        $(document).ready(function(){
+        //restApi제공하는 곳: 공공포털,네이버,구글,인스타,페북,카카오.....
+        //restApi 서버에서 받은 빅데이터(코로나19 확진자위치와 발생일시)를 (아래)
+        //$.ajax ({}); asyncrono javascrlpt and xml 비동기 자바스크립트 와 xml 통신
+        //xml 대신에 json데이터를 사용
+        //비동기: (추가) vs 동기(기본)
+        //동기: 웹프로그램 기본 = 옛날에는 동영상플레이시,100메가 avl모두 다운로드 후 재생
+        //비동기: 위 와 같은 상황에서는 다중작업이 않됨. 사이트가 먹통처럼 보입니다.
+        //$ ajax 핢수로 비동기 데이터 (xml -> json ) 전송을 사용합니다.
+        $.ajax({
+            type:'get',//method방법 get(검색),post(보안필요:입력,수정,삭제)
+            url:'https://coroname.me/getdata',//restApi서버의 url주소
+            dataType:'json',//restApti 서버에서 전송받은 데이터 형식을 명시,json,text
+            success:function(result){
+               // var jsonData = JSON.parse(result);
+               var jsonData = result.data; //data 키의 값을 반환함.
+                console.log(jsonData);//result에는 위 url에서 dataType형식으로 받은자료가 저장됨
+                var i = 0; //index 정의
+                var i = 0; //index 정의
+                //향상된 for반복문 사용
+            for(var jsonOne of jsonData){
+                i = i + 1;
+                $('#board #tbody').append('<tr>');
+                $('#board #tbody').append('<td style="text-align:center;">'+(i)+'</td>');
+                $('#board #tbody').append('<td style="background-color:red">'+jsonOne.place+'</td>');
+                $('#board #tbody').append('<td>'+jsonOne.latlng+'</td>');
+                $('#board #tbody').append('<td>'+jsonOne.createDate+'</td>');
+                $('#board #tbody').append('<td>'+jsonOne.region+'</td>');
+                $('#board #tbody').append('</tr>');
+               }
+               //오리지널 for반복문 사용
+               //2차원배열 변수 [가로] [세로] (표=데이터베이스 DB의테이블)
+               var i = 0;//인덱스 값 초기화
+               var i = 0; // 인덱스 값 초기화
+                    for(i=0; i<jsonData.length; i++) {
+                        if(i==10) { break; }
+                        $('#board #tbody').append('<tr>');
+                        $('#board #tbody').append('<td style="text-align:center;">'+(i+1)+'</td>');
+                        $('#board #tbody').append('<td style="background-color:green">'+jsonData[i]['place']+'</td>');
+                        $('#board #tbody').append('<td>'+jsonData[i]['latlng']+'</td>');
+                        $('#board #tbody').append('<td>'+jsonData[i]['createDate']+'</td>');
+                        $('#board #tbody').append('<td>'+jsonData[i]['region']+'</td>');
+                        $('#board #tbody').append('</tr>');
+                    }
+            },
+            error:function(){
+                alert('RestApi 서버에 문제가 발생했습니다.나중에 이용해주세요!');
+            }//url rest서버가 정전, 프로그램에러할때, 처리할 내용 명시. 
+           });
+        });
+        
+        //*외부 js 파일의 json 데이터를 body태그안의 #*/
         console.log(jsonData);
         //jsonDate 파싱해서 #board 영역에 동적으로 출력
         $(document).ready(function(){
-            //jsondate 1개씩 뽑아서 화면에 table>er>td에 출력하게 합니다.
-            //append는 가상선택자의 arter와 같음. 기준영역의 다음을 말합니다.
+            //스프링 jsp(java) 방식에서 파싱하는 방법(아래)
+            // 향상된 for반복문으로 파싱하는 방법(아래)
+            var i = 0; //index 정의
+            for(var jsonOne of jsonData){
+                i = i + 1;
+                $('#board #tbody').append('<tr>');
+                $('#board #tbody').append('<td style="text-align:center;">'+(i)+'</td>');
+                $('#board #tbody').append('<td style="background-color:red">'+jsonOne._id+'</td>');
+                $('#board #tbody').append('<td>'+jsonOne.age+'</td>');
+                $('#board #tbody').append('<td>'+jsonOne.eyeColor+'</td>');
+                $('#board #tbody').append('<td>'+jsonOne.name+'</td>');
+                $('#board #tbody').append('</tr>');
+            }
+            // jQuery에서 파싱하는 방법(아래)
+            // $.each(json데이터오브젝트, 콜백함수funtion(index, jsonOne) {});
+            $.each(jsonData, function(index, jsonOne){// jsonOne 1개의 레코드값
+                // 레코드: 필드(_id, age, eyeColr, name)들로 구성된 데이터
+                if(index == 10) { return false; } //each반복문을 중단시키는 명령
+                $('#board #tbody').append('<tr>');
+                $('#board #tbody').append('<td style="text-align:center;">'+(index+1)+'</td>');
+                $('#board #tbody').append('<td style="background-color:skyblue">'+jsonOne._id+'</td>');
+                $('#board #tbody').append('<td>'+jsonOne.age+'</td>');
+                $('#board #tbody').append('<td>'+jsonOne.eyeColor+'</td>');
+                $('#board #tbody').append('<td>'+jsonOne.name+'</td>');
+                $('#board #tbody').append('</tr>');
+            });
+            // 오리지날(네이티브) JS에서 파싱하는 방법(아래)
             for(var i=0;i<jsonData.length;i++) {
-                $('#board tbody').html('<tr>');
-                $('#board tbody').html('<td style="text-align:center;">'+(i+1)+'</td>');
-                $('#board tbody').html('<td>'+ jsonData[i]['_id']+'</td>');
-                $('#board tbody').thml('<td>'+ jsonData[i]['age']+'</td>');
-                $('#board tbody').html('<td>'+ jsonData[i]['eyeColor']+'</td>');
-                $('#board tbody').html('<td>'+ jsonData[i]['name']+'</td>');
-                $('#board tbody').html('</tr>');            
+                if(i==10) { break; } //for반복문을 중단시키는 명령
+                // jsonData 1개씩 뽑아서 화면에 table>tr>td에 출력하게 합니다.
+                // append는 가상선택자의 after와 같음. 기준영역의 다음을 말합니다.
+                $('#board #tbody').append('<tr>');
+                $('#board #tbody').append('<td style="text-align:center;">'+(i+1)+'</td>');
+                $('#board #tbody').append('<td style="background-color:yellow">'+jsonData[i]['_id']+'</td>');
+                $('#board #tbody').append('<td>'+jsonData[i]['age']+'</td>');
+                $('#board #tbody').append('<td>'+jsonData[i]['eyeColor']+'</td>');
+                $('#board #tbody').append('<td>'+jsonData[i]['name']+'</td>');
+                $('#board #tbody').append('</tr>');
             }
         });
+        
     </script>
     <script>
     //jQuery로 개발자가 사용 간편한게 만들기
@@ -55,8 +133,8 @@
        <th>age</th>  
        <th>eyeColor</th>
        <th>name</th>
-    <tbody>
   </tr>
+  <tbody/ id="tbody"></tbody>
 </table>
 <div id="one">헬로 자바스크립트</div>
 <p class="two">헬로 자바스크립트2</p>
