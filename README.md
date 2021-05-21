@@ -80,10 +80,14 @@ vs code 에서 만든 ui를 jsp로 변경 후스프링웹프로젝트를 진행
 -css3,html: 검사기준입니다.
 -사용차단 모바일 메인페이지 footer 영역 css입히기.
 -과제물 제출 준비
--board_write,html 파일에bootstrsp
+-board_write,html 파일에bootstrsp 코어임포트 + 서머노트플러그인 임포트
+-board_view,html 댓글 UI디자인(부트스트랩) 추가
+-반응형 서브페이지(로그인 회원가입 마이페이지)
+-관리자단 AdimnLTE적용.(ㅊ회원관리CRUD,게시판CRUD,대시보드)
 -jQuery json 데이처 파싱 실습
 -메인페이지에 자바스크립트(jQuery)적용, 메뉴, 슬라이드이미지처리, top상단이동
--
+- 2. 스피링 웹프로젝트 만들예정 . 헬로 월드
+-위 스프링 프로젝트에서 자바 기초도 이것으로 실습할 예정.>htmlui만든걸 jsp변경작업 들어갑니다.
 #### 20210512(목요일
 - 픽사베이 이미지 3개: 로고1,슬라이드 이미지1,noimage 1 받고,경로 적어두기
 - 로고:https://pixabay.com/ko/vectors/%EC%BB%A4%ED%94%BC-%EC%BB%A4%ED%94%BC-%ED%95%9C%EC%9E%94-%EC%95%84%EC%B9%A8-%EC%8B%9D%EC%82%AC-5009730/
