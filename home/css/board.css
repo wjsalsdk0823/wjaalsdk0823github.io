@@ -259,7 +259,7 @@ input::placeholder { color: #999; }/*IE(internet Explore)브라우저용 스타�
 @media all and (min-width:801px) {
     /*뷰 페이지 버튼 스타일*/
      .btn_bbs {
-         width: 0px;
+         width: 70px;
          float: none;
          text-align: center;
      }
