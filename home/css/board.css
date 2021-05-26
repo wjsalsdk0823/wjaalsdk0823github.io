@@ -313,7 +313,7 @@ input::placeholder { color: #999; }/*IE(internet Explore)브라우저용 스타�
 }
 .app_content input {
 	border: none;
-	width: inherit;/*부모 영역의 input태그의 너비값을 상속받음*/
+	/*width: inherit;/*부모 영역의 input태그의 너비값을 상속받음*/
 	box-sizing: border-box;
 	display: inline-block;
 	height: 45px;
