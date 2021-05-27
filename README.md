@@ -1,5 +1,14 @@
+#### 20210528(금)
+-관리자단 adimin/board_wite.html, board_view.html(댓글ajax처리)
+-대시보드 home.html (최근 회원가입정보, 최근 게시물 정보 )
+-이클립스로 작업한 html 내용을 ->resources 폴더 (admin,home,root,파일까지)로 배치
+
 #### 20210527(목)
--관리자단 adaminlte적용(호원관리crud,게시판crud,대시보드)
+-admin/board list,html 부터 시작s
+-관리자단 adaminlte적용-스프링시간(호원관리crud,게시판crud,대시보드)
+-관리자단 기본 틀(템플릿):공통 UI부분 작업
+-ctrl+k ctrl+0 코드축소 = ctrl+0 코드구조 확인
+-ctrl+k ctrl+j =코드 펼침 = ctrl+k+j
 
 #### 20210526(수)
 -검색엔진에 최적화? 의미있는 태그를 사용했는가? <header>,<section>,<footer>,<article>태그처럼 html5부터 만들어진 
@@ -21,17 +30,6 @@ required 속성을 태그에 집어넣으면 끝
 -자바스프링 (이클립스 egov전자정부 프레임워크개발환경) 실습진행.
 -오라클 DB(SQL디벨러퍼개발환경)실습진행
 -두 달 후 스프링으로 실습 진행(납품용 이력서포트폴리오용)
--egov:자바기반-> JDK(java delvelopent kit) kit(자바개발환경) 설치확인
--JDK실행 경로 설정
--자바 오라클자바는 8버전부터 돈을 내야 합니다.
--오픈jDK로 이클립스를 사용할 예정
--open jdk 8버전 (egov 100%호환)   
--톰캣 : 이클립스에서 웹프로그램 결과를 확인하는 라이브 서버입니다(localhost:8080)
--라이브서버(아파치):vs code에서 html결과를 확인하는 라이브 서버(localhost : 5500) 
--JRE: java runtime environment(자바실행환경)자바앱을 실행할때만 사용
--JDK: 개발하고,실행할때  
--스프링프로젝트1개(헬로자바)- test 폴더에서 자바기초를 실습
--자바에 익숙해진 후 위 스프링프로젝트를 이용해서 
 vs code 에서 만든 ui를 jsp로 변경 후스프링웹프로젝트를 진행
 
 #### 20210524 (월)
