@@ -1,7 +1,17 @@
+#### 20210531
+-ERD기준으로 게시판 UI수정
+-스프링작업의 시작
+-이클립스로 작업한  html내용을 ->resources폴더
+
+
 #### 20210528(금)
 -관리자단 adimin/board_wite.html, board_view.html(댓글ajax처리)
 -대시보드 home.html (최근 회원가입정보, 최근 게시물 정보 )
 -이클립스로 작업한 html 내용을 ->resources 폴더 (admin,home,root,파일까지)로 배치
+-스프링 작업의 시작
+-뒤로가기 허용하면, 게시물 테러가 가능합니다
+-뒤로가기를 허용하지 않게 페이지를 이동하는 방식(js에서는 location.replace함수사용)
+-뒤로가기를 허용하는 함수(js에서는 location)
 
 #### 20210527(목)
 -admin/board list,html 부터 시작s
